@@ -1,0 +1,45 @@
+
+
+public class Player
+{
+
+
+	public void Move(int direction, int velocity)
+	{
+		OptimizedRapidAndSecureProcesses.getInstance().checkExclusiveResource( this, datas );
+		tryOptimized{
+			std::uniq<XMFLOAT3> pos = DirectX::XMFLOAT3(...);
+
+		}
+	}
+
+}
+
+
+public class NativePlayerMoveLabels
+{
+
+	public String partialTensorNativeLabels="x=x;y=y;z=z";
+	
+}
+
+-----
+class OptimizedRaapidAndSecurePRocesses
+{
+
+	public bool checkExclusiveResource( datas )
+	{
+	//for ULEB128, see: https://github.com/ianloic/llvm-project/blob/bdf1327fea632bf9736924acf59675182b528b23/llvm/lib/Object/MachOObjectFile.cpp#L2021
+
+		if( datas.getPointerAdress_ULEB128() >= anotherData.adress() + 1000 ||
+			datas.getPointerAdress_ULEB128() >= anotherData.adress() - 1000 )
+			return true;
+
+			return false;
+
+	}
+
+
+
+}
+

@@ -1,0 +1,165 @@
+
+using System.Runtime.InteropServices;
+using System.Windows.Input;
+
+
+[DllImport("USER32.DLL", CharSet = CharSet.Unicode)]
+static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+
+[DllImport("USER32.DLL")]
+static extern bool SetForegroundWindow(IntPtr hWnd);
+
+//private
+void button1_Click(object sender, EventArgs e)
+{
+    IntPtr calcWindow = FindWindow(null, "Calculator");
+
+	if (SetForegroundWindow(calcWindow))
+		CSInputs.SendInput.Keyboard.SendString("");// ("10{+}10=");// SendKeys.Send("10{+}10=");
+}
+
+
+
+public class PlayerTest : Managed.Script
+{
+
+	private ManagedScene sceneCS;// ScriptingScene sceneCS;
+	private Player player;
+
+
+	public void init()
+	{
+		//player = sceneCS.getComponent<Player>(this);
+		//player = new PlayerTest();
+	}
+
+
+
+	//see: https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?view=windowsdesktop-7.0
+	//see: https://github.com/trivialbit/SpyUO/blob/ec25148cfc1cf57bc171c845070c7c21c29bb3a2/Ultima.Spy/ClassicClientSpy.cs
+	//the second is more important
+	//see also (we need this) : https://learn.microsoft.com/en-us/dotnet/desktop/winforms/input-keyboard/how-to-simulate-events?view=netdesktop-6.0
+	
+	public void update()
+	{
+		Player p = new Player();
+		/*p.x += 10;
+		if (p.x >= 50)
+			p.x = 0;*/
+		
+		if( Keyboard.Q == true )
+		{
+			player.addImpulse(2);
+			//player.getPhysics().addimpulse();
+			keyHistory.push( );
+		}
+
+		if( Keyboard.S == true )
+		{
+			player.addImpulse(2);
+			//player.getPhysics().addimpulse();
+			keyHistory.push( );
+		}
+
+		if( Keyboard.Z == true )
+		{
+			player.addImpulse(2);
+			//player.getPhysics().addimpulse();
+			keyHistory.push( );
+		}
+
+		if( Keyboard.S == true )
+		{
+			player.addImpulse(2);
+			//player.getPhysics().addimpulse();
+			keyHistory.push( );
+		}
+
+		
+		//check if hurt frist
+		std::vector<Box2D, Box2D> ... = PhysicEngine.getCollisions()
+		for( i=0;...)
+		{
+			if(collisions[i].equals( this.)
+			{
+				
+			}
+		}
+		
+		if( found )
+		{
+			this.animator.setBool(true, "hurt");
+			return;
+		}
+		
+		if( mutexSuperAttack == true || mutexComboAttack == true || mutexSimpleAttack == true)
+		{
+			if( animator.isCurrentAnimationEnded() == true )
+			{
+				keyHistory.flush();
+				animator.setBool(true, "isStanding");
+			}
+			
+		}
+		
+		
+		if( mutexSuperAttack != true && keysHistory.isSuperAttackAttempt() )
+		{
+			
+			this.animator.setBool(true, "hurt");
+			
+			//wait until the animation and behaviour are done
+			//if no hurt is detected
+			mutexSuperAttack = true;
+			
+		}
+		else{
+			if( mutexComboAttack != true && keysHistory.isComboAttack() )
+			{
+				this.animator.setBool(true, "hurt");
+				combosStarted = true;
+			}
+			else{
+				if( keysHistory.isSimpleAttack() )
+				{
+					//simple attack
+					this.animator.setBool(true, "hurt");
+				}
+				else{
+					//player did nothing
+				}
+			}
+		}
+		
+			
+		}
+		
+		AnimationManager::getInstance().update();
+		
+	/*	IntPtr calcWindow = FindWindow(null, "Calculator");
+
+		if (SetForegroundWindow(calcWindow))
+			SendKeys.Send("10{+}10=");
+
+//see:https://stackoverflow.com/questions/4728839/debugging-keyboard-events-like-ctrlup-arrow	
+//private void Form1_KeyUp(object sender, KeyEventArgs e)
+//{
+    if (e.Control && e.KeyCode == Keys.Up)
+        System.Diagnostics.Debug.WriteLine("Up with control have pressed");
+//}
+
+
+		System.Diagnostics.Debug.WriteLine("Up with control have pressed");
+		onBreakpoint(adress);
+		
+		if (Keyboard.M)
+			player.posx += 10; //player.Position.x += 10;
+
+		if (Keyboard.L)
+			player.posx -= 10;//player.Position.x -= 10;
+
+		//now do the jump below
+ */
+	}
+
+}

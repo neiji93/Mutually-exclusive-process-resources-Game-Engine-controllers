@@ -1,0 +1,23 @@
+
+
+
+class Player
+{
+private:
+	int x,y,z; //position
+
+public:
+	
+	void validateBySmartPointer()
+	{
+
+		//.....
+	}
+
+
+	//all internal function must have no parameters and must have empty corpus
+	void move();
+}
+
+
+PatchingSmartPointerFunction* moveFunc;

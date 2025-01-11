@@ -1,0 +1,49 @@
+
+//Mutually exclusiv resource checker
+
+//comme j'utilise des objet cpp qui representent des fichiers avec comme instantiation par exemple :
+IsolateFilePlayerMove* moveFunc; //je ne suis pas sur que je ne vais utiliser que des fonctions
+				//sinon il faut savoir que c le patcher qui va completement tout patcher et ne
+				//laisser que ce truc !
+
+//exemple de classe a patcher pr une fonction
+
+
+...
+
+
+//utilité de tout ca !??? euhhhhh !
+//oui c vrai, on peut utiliser le stack trace pr determiner si les resources sont exclusive !!!!
+//par exemple si dans la pile d'appel de fonctions, on n'a pas deux objets qui sont cote a cote dans la pile (l'un au
+dessus de lautre, eh bien il n ont pas les meme resources !
+//d un point de vue, faire ca nous permet d avoir un OS super rapide !!!!
+//n oublions pas que les mart pointer sont en fait la technologie des try catch (euh, c linverse)
+//et ils permettent d'avoir des applications en meme temps securisees et rapides, mais sil n y avait pas besoin de securite
+//l application aurait ete moins rapide avec les shared pointer que sil  n y en avait pas !
+
+ne pas oublier aussi qu avec les smart pointer, on peut creer des kernel (??) dans l user space d un os !
+
+
+---------------------------
+
+unalgorithme simple serait de creer des pointeurs (ULEB128) qui sont cote a cote dans la memore et donc, si deux pointeurs (??? peut etre que
+c autre chose - bref je me comprend) eh bien, les 2 pointeurs ont des resources communes. En plus de cela (alago simple
+que j ai trouve, on peut stoker de tres grande quantites de programmes et l on pourra faire certaines operéationns tres rapidement !
+--> Resultat : gestion de qté astronomiques et rapidité d execution !
+
+
+
+
+
+
+Je pense qu il doit y avoir des algorithmes qui utilise la technologie que je viens de citer
+see walk_process_tree
+
+see: https://github.com/aosp-mirror/kernel_common/blob/9b4ff1899e6a1f0a79a0a76f8490498aa55b29d6/kernel/fork.c#L204
+
+
+En tout cas meme sans ces algorithmes, l application va etre hyper rapide
+
+
+
+
